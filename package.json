@@ -19,5 +19,8 @@
   "homepage": "https://github.com/betkarakash/CypressLearning#readme",
   "devDependencies": {
     "cypress": "^12.2.0"
+  },
+  "dependencies": {
+    "@testing-library/cypress": "^9.0.0"
   }
 }
