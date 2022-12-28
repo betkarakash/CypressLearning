@@ -4,7 +4,16 @@
   "description": "This is repo created for Cypress Automation tool learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "assignment1": "npx cypress run --spec ./cypress/e2e/Day5/assignmentOne.cy.js --browser chrome --headed",
+    "assignment2": "npx cypress run --spec ./cypress/e2e/Day5/assignmentTwo.cy.js --browser chrome --headed",
+    "assignment3": "npx cypress run --spec ./cypress/e2e/Day5/assignmentThree.cy.js --browser chrome --headed",
+    "assignment4": "npx cypress run --spec ./cypress/e2e/Day5/assignmentFour.cy.js --browser chrome --headed",
+    "assignment5": "npx cypress run --spec ./cypress/e2e/Day5/assignmentFive.cy.js --browser chrome --headed",
+    "mochawesomeReport": "npx mochawesome-merge ./cypress/results/.jsons/*.json -o  mochawesomeReport.json",
+    "generateReport": "npx marge mochawesomeReport.json",
+    "assignment5_with_allure": "npx cypress run --spec ./cypress/e2e/Day5/assignmentFive.cy.js --browser chrome --headed --env allure=true",
+    "allureReport": "allure serve ./allure-results"
   },
   "repository": {
     "type": "git",
@@ -18,9 +27,19 @@
   },
   "homepage": "https://github.com/betkarakash/CypressLearning#readme",
   "devDependencies": {
-    "cypress": "^12.2.0"
+    "allure-commandline": "^2.20.1",
+    "cypress": "^12.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.2",
+    "mochawesome-report-generator": "^6.2.0"
   },
   "dependencies": {
-    "@testing-library/cypress": "^9.0.0"
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "@testing-library/cypress": "^9.0.0",
+    "cypress-image-snapshot": "^4.0.1",
+    "cypress-mochawesome-reporter": "^3.2.3"
+  },
+  "env": {
+    "allureResultsPath": "allure-results"
   }
 }

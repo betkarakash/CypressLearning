@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-28T13:57:37.981Z",
+    "end": "2022-12-28T13:57:59.589Z",
+    "duration": 17624,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666667,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d92a4dad-dbb4-4a93-9aaa-a78fd2223524",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Day5\\assignmentFive.cy.js",
+      "file": "cypress\\e2e\\Day5\\assignmentFive.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "29c52d74-04e8-4231-9a30-4096ac8427b4",
+          "title": "Day 5 - Assignment 5",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "first test case",
+              "fullTitle": "Day 5 - Assignment 5 first test case",
+              "timedOut": null,
+              "duration": 1377,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (cy.get('.category-grid > .item-grid').find('div.item-box').should('have.length', 3)) {\n  for (let i = 1; i <= 3; i++) {\n    cy.get(':nth-child(' + i + ') > .category-item > .title > a').should('have.text', cars[i - 1]);\n  }\n}",
+              "err": {},
+              "uuid": "896f24ab-1d76-4f86-b24a-3d201d75c23c",
+              "parentUUID": "29c52d74-04e8-4231-9a30-4096ac8427b4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "second test case",
+              "fullTitle": "Day 5 - Assignment 5 second test case",
+              "timedOut": null,
+              "duration": 5283,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .product-item > .details > .product-title > a').invoke('attr', 'href').should('eq', '/build-your-own-computer');\ncy.get(':nth-child(1) > .product-item > .details > .product-title > a').click();",
+              "err": {},
+              "uuid": "edd09d13-7c09-437d-a7f8-a50ab73ca975",
+              "parentUUID": "29c52d74-04e8-4231-9a30-4096ac8427b4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "third test case",
+              "fullTitle": "Day 5 - Assignment 5 third test case",
+              "timedOut": null,
+              "duration": 10964,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(2) > .product-item > .details > .add-info > .prices > .price').invoke('text').as('macbookPrice');\ncy.get(':nth-child(2) > .product-item > .details > .add-info > .buttons > .product-box-add-to-cart-button').click();\ncy.get('#add-to-cart-button-4').click();\ncy.get('.cart-label').click();\ncy.get('@macbookPrice').then(macbookPrice => {\n  cy.get('.product-unit-price').should('have.text', macbookPrice);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.product-unit-price>' to have text '', but the text was '$1,800.00'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.product-unit-price>' to have text '', but the text was '$1,800.00'\n    at Context.eval (webpack:///./cypress/e2e/Day5/assignmentFive.cy.js:30:42)",
+                "diff": "- '$1,800.00'\n"
+              },
+              "uuid": "3a7efe08-8897-4abe-8763-76b8b9588d23",
+              "parentUUID": "29c52d74-04e8-4231-9a30-4096ac8427b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "896f24ab-1d76-4f86-b24a-3d201d75c23c",
+            "edd09d13-7c09-437d-a7f8-a50ab73ca975"
+          ],
+          "failures": [
+            "3a7efe08-8897-4abe-8763-76b8b9588d23"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 17624,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "reportDir": "cypress\\results\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
