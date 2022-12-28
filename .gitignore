@@ -1,2 +1,8 @@
 /node_modules/
 cypress/downloads/
+cypress/results/
+cypress/videos/
+cypress/screenshots/
+/mochawesome-report/
+mochawesomeReport.json
+/allure-results/
